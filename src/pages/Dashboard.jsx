@@ -1,5 +1,21 @@
+import { logout } from "../config/firebase";
+
 const Dashboard = () => {
-    return "Dashboard";
+    const handleLogout = async () => {
+        try {
+            await logout();
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
+    return (
+        <>
+            <h1>Dashboard</h1>
+            <button onClick={handleLogout} style={{display: 'block'}}>Logout</button>
+        </>
+    );
 };
 
 export default Dashboard;
