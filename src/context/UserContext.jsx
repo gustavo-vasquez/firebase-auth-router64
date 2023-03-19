@@ -14,7 +14,7 @@ export default function UserContextProvider({ children }) {
   useEffect(() => {
     console.log("actualizado");
     const unsuscribe = onAuthStateChanged(auth, (user) => {
-      console.log(user); // si existe un usuario lo devuelve
+      console.log(user); // si existe un usuario lo devuelve sino es 'null'
       setUser(user);
     });
 
